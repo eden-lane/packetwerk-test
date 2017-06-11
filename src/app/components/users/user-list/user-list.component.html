@@ -1,5 +1,11 @@
 <ul>
   <li *ngFor="let user of users">
     {{ user.name }}
+    <div>
+      {{ user.address.zipcode }}, 
+      {{ user.address.city }}, 
+      {{ user.address.street}}, 
+      {{ user.address.suite }}
+    </div>
   </li>
 </ul>

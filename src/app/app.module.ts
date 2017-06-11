@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { UserService } from './services/user.service';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component'
 import { UserListComponent } from './components/users/user-list/user-list.component'
@@ -16,7 +17,8 @@ import { UserListComponent } from './components/users/user-list/user-list.compon
   ],
   imports: [
     HttpModule,
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
