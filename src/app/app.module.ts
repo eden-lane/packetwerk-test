@@ -8,6 +8,7 @@ import { AlbumService } from './services/album.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component'
+import { AlbumsComponent } from './components/albums/albums.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { UserListComponent } from './components/users/user-list/user-list.compon
     AppComponent,
     UsersComponent,
     UserListComponent,
+    AlbumsComponent
   ],
   imports: [
     HttpModule,
