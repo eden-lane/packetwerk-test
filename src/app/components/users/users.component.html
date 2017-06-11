@@ -1,1 +1,11 @@
-<user-list [users]="users"></user-list>
+<ul>
+  <li *ngFor="let user of users">
+    <a [routerLink]="['/users/', user.id]">{{ user.name }}</a>
+    <div>
+      {{ user.address.zipcode }}, 
+      {{ user.address.city }}, 
+      {{ user.address.street}}, 
+      {{ user.address.suite }}
+    </div>
+  </li>
+</ul>
