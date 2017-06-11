@@ -13,7 +13,5 @@ export class UserListComponent {
   @Input()
   users: User[];
 
-  constructor(
-    private userService: UserService
-  ) { }
+  constructor() { }
 }
