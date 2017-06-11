@@ -11,20 +11,21 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component'
 import { AlbumsComponent } from './components/albums/albums.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
+import { PhotosComponent } from './components/photos/photos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     UserListComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    PhotosComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [UserService, AlbumService],
   providers: [UserService, AlbumService, PhotoService],
   bootstrap: [AppComponent]
 })

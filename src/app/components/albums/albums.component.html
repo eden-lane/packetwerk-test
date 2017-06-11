@@ -1,6 +1,6 @@
 <h2>Albums:</h2>
 <ul>
   <li *ngFor="let album of albums">
-    {{ album.title }}
+    <a [routerLink]="['albums', album.id]">{{ album.title }}</a>
   </li>
 </ul>

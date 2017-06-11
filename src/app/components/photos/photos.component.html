@@ -1,0 +1,4 @@
+<h2>Photos:</h2>
+<a *ngFor="let photo of photos" [href]="photo.url" >
+  <img [src]="photo.thumbnailUrl"/>
+</a>
