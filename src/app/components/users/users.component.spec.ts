@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
+import { User } from '../../classes/user';
+import { UserService } from '../../services/user.service';
 import { UsersComponent } from './users.component';
+
+class UserServiceMock {
+  public users: User[] = [];
+  
+  getUsers(): Promise<User[]> {
+    return Promise.resolve(this.users)
+  }
+}
 
 describe('UsersComponent', () => {
   let component: UsersComponent;
@@ -8,7 +19,11 @@ describe('UsersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ UsersComponent ],
+      imports: [ RouterTestingModule ],
+      providers: [
+        { provide: UserService, useClass: UserServiceMock }
+      ]
     })
     .compileComponents();
   }));

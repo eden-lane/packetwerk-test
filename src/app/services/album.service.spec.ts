@@ -1,11 +1,17 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { HttpModule, XHRBackend } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 
 import { AlbumService } from './album.service';
 
 describe('AlbumService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AlbumService]
+      imports: [HttpModule],
+      providers: [
+        { provide: XHRBackend, useClass: MockBackend },
+        AlbumService
+      ]
     });
   });
 
