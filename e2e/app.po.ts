@@ -5,7 +5,7 @@ export class TestGuiPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getCurrentUrl() {
+    return browser.getCurrentUrl();
   }
 }

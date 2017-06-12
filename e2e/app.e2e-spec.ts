@@ -1,4 +1,5 @@
 import { TestGuiPage } from './app.po';
+import { browser, by, element, $, $$ } from 'protractor';
 
 describe('test-gui App', () => {
   let page: TestGuiPage;
@@ -7,8 +8,16 @@ describe('test-gui App', () => {
     page = new TestGuiPage();
   });
 
-  it('should display welcome message', () => {
+  it('should navigate to users page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getCurrentUrl()).toEqual(browser.baseUrl + '/users')
   });
+  
+  it('should show list of 10 users', () => {
+    page.navigateTo();
+    $$('a').then((items) => {
+      expect(items.length).toBe(10)
+    });
+  })
+  
 });
